@@ -1,0 +1,9 @@
+name: Test Case 5 - Deploy
+
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deployment successful"
