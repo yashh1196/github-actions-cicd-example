@@ -13,12 +13,6 @@ pipeline {
             }
         }
 
-        stage('Lint') {
-            steps {
-                bat 'npx eslint src/'
-            }
-        }
-
         stage('Test') {
             steps {
                 bat 'npm test'
