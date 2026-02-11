@@ -8,6 +8,8 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
+                bat 'rmdir /s /q node_modules || exit 0'
+                bat 'del package-lock.json || exit 0'
                 bat 'npm cache clean --force'
                 bat 'npm install'
             }
@@ -15,7 +17,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat 'npm test'
+                bat 'npx jest'
             }
         }
     }
