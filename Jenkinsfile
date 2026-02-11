@@ -2,33 +2,34 @@ pipeline {
     agent any
 
     stages {
-        stage('Test Case 1 - Checkout') {
+        stage('Checkout') {
             steps {
-                echo 'Source code checked out successfully'
+                checkout scm
             }
         }
 
-        stage('Test Case 2 - Install') {
+        stage('System Info') {
             steps {
-                echo 'Dependencies installed successfully'
+                bat 'node -v || echo Node not installed'
+                bat 'npm -v || echo NPM not installed'
             }
         }
 
-        stage('Test Case 3 - Build') {
+        stage('Create Build File') {
             steps {
-                echo 'Build completed successfully'
+                bat 'echo Build successful > build.txt'
             }
         }
 
-        stage('Test Case 4 - Test') {
+        stage('Read Build File') {
             steps {
-                echo 'All test cases passed'
+                bat 'type build.txt'
             }
         }
 
-        stage('Test Case 5 - Deploy') {
+        stage('Archive Artifact') {
             steps {
-                echo 'Application deployed successfully'
+                archiveArtifacts artifacts: 'build.txt'
             }
         }
     }
