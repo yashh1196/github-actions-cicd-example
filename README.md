@@ -1,3 +1,4 @@
+# CI/CD Practical
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](https://github.com/alexmalins/github-actions-cicd-example/blob/main/LICENSE)
 [![Tests](https://github.com/alexmalins/github-actions-cicd-example/actions/workflows/1_tests.yml/badge.svg)](https://github.com/alexmalins/github-actions-cicd-example/actions/workflows/1_tests.yml)
 [![codecov](https://codecov.io/gh/alexmalins/github-actions-cicd-example/branch/main/graph/badge.svg?token=EXFQHNBA9Z)](https://codecov.io/gh/alexmalins/github-actions-cicd-example)
